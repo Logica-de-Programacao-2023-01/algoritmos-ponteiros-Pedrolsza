@@ -1,22 +1,18 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
-type Circulo struct {
-	raio float64
-}
-
-func calcularArea(c Circulo) float64 {
-	return math.Pi * c.raio * c.raio
+func somaNaturais(p *int, n int) {
+	sum := 0
+	for i := 1; i <= n; i++ {
+		sum += i
+	}
+	*p = sum
 }
 
 func main() {
-	circulo := Circulo{raio: 3.5}
-
-	area := calcularArea(circulo)
-
-	fmt.Printf("Área do círculo: %.2f\n", area)
+	var num int
+	n := 5
+	somaNaturais(&num, n)
+	fmt.Println("A soma dos", n, "primeiros números naturais é:", num)
 }
