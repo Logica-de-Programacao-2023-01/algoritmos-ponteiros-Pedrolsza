@@ -1,0 +1,36 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func isPrime(num int) bool {
+	if num < 2 {
+		return false
+	}
+	sqrt := int(math.Sqrt(float64(num)))
+	for i := 2; i <= sqrt; i++ {
+		if num%i == 0 {
+			return false
+		}
+	}
+	return true
+}
+
+func preencherPrimos(slice *[]int, tamanho int) {
+	num := 2
+	for len(*slice) < tamanho {
+		if isPrime(num) {
+			*slice = append(*slice, num)
+		}
+		num++
+	}
+}
+
+func main() {
+	var primos []int
+	tamanho := 10
+	preencherPrimos(&primos, tamanho)
+	fmt.Println(primos)
+}
