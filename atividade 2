@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func checkParImpar(num *int) {
+	if *num%2 == 0 {
+		*num = 0
+	} else {
+		*num = 1 
+	}
+}
+
+func main() {
+	numero := 7
+
+	fmt.Println("Antes:", numero)
+	checkParImpar(&numero)
+	fmt.Println("Depois:", numero)
+}
