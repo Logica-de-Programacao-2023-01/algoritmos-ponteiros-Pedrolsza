@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+func modificarValor(valor *int) {
+	*valor = 42
+}
+
+func main() {
+	var num int = 10
+	fmt.Println("Antes:", num)
+	modificarValor(&num)
+	fmt.Println("Depois:", num)
+}
