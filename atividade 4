@@ -1,0 +1,27 @@
+package main
+
+import (
+	"fmt"
+)
+
+func sumLastDigits(num *int) {
+	n := *num
+	if n < 0 {
+		n = -n
+	}
+
+	digit1 := n % 10
+	digit2 := (n / 10) % 10
+
+	sum := digit1 + digit2
+
+	*num = sum
+}
+
+func main() {
+	numero := 1234
+
+	fmt.Println("Antes:", numero)
+	sumLastDigits(&numero)
+	fmt.Println("Depois:", numero)
+}
