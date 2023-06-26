@@ -1,0 +1,26 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func reverseString(str *string) {
+	runes := []rune(*str)
+	length := len(runes)
+
+	for i := 0; i < length/2; i++ {
+		j := length - i - 1
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+
+	*str = string(runes)
+}
+
+func main() {
+	texto := "Hello, World!"
+
+	fmt.Println("Antes:", texto)
+	reverseString(&texto)
+	fmt.Println("Depois:", texto)
+}
